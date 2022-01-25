@@ -7,11 +7,11 @@ namespace TutanDev.References
     {
         [SerializeField] float initialValue;
 
-
         private void OnEnable()
         {
             Value = initialValue;
         }
+
         public override bool Equals(float t)
         {
             return Value == t;
