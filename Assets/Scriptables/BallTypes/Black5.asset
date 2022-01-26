@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b431818ce17780b489eddc2e4755e327, type: 3}
-  m_Name: Color
+  m_Script: {fileID: 11500000, guid: 076177e3a8531b54c8e656377995e6c4, type: 3}
+  m_Name: Black5
   m_EditorClassIdentifier: 
-  initialValue: {r: 0.8207547, g: 0.2206746, b: 0.2206746, a: 1}
+  minRadius: 5
+  maxRadius: 5
+  colorPallete:
+  - {fileID: 11400000, guid: e118bb6ca25f8c44e97e3f6a5ef2ab8c, type: 2}

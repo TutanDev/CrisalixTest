@@ -151,6 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 728894946}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -181,9 +182,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 682280454}
+  - {fileID: 1743689938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -223,8 +224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 180, y: 20}
+  m_AnchoredPosition: {x: -12.5, y: 0}
+  m_SizeDelta: {x: 205, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146980616
 MonoBehaviour:
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 10
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -428,16 +429,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 282318295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1788d7038226da4aa46bbd0aca709ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e5eeb96a2fcbb44eb5e8fdcee130d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeSelector: {fileID: 1183901682}
-  colorSelector: {fileID: 898393754}
-  radiusSelector: {fileID: 0}
-  ballTypes:
-  - {fileID: 11400000, guid: 0da14cffc6a2b474cae82f8028213b08, type: 2}
-  - {fileID: 11400000, guid: 2aaafc74662daad47baaf1e7b92547e5, type: 2}
-  - {fileID: 11400000, guid: 882e70ea0483af64ebe08c68ad648c9b, type: 2}
+  config: {fileID: 11400000, guid: 97a474e7dbcf3b34e8dc4ab8095f7b21, type: 2}
+  controlMenu: {fileID: 345763162}
 --- !u!1 &345763156
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,8 +447,9 @@ GameObject:
   - component: {fileID: 345763160}
   - component: {fileID: 345763159}
   - component: {fileID: 345763158}
+  - component: {fileID: 345763162}
   m_Layer: 5
-  m_Name: Background
+  m_Name: ControlMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,6 +555,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345763156}
   m_CullTransparentMesh: 1
+--- !u!114 &345763162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345763156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fe06bc956bcd244aea45d099244e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typePanel: {fileID: 1664639064}
+  radiusPanel: {fileID: 381397171}
+  colorPanel: {fileID: 2099509826}
 --- !u!1 &381397170
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +649,7 @@ GameObject:
   - component: {fileID: 391827885}
   - component: {fileID: 391827886}
   m_Layer: 5
-  m_Name: ColorToggle_Btn
+  m_Name: ColorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +702,7 @@ GameObject:
   - component: {fileID: 463891253}
   - component: {fileID: 463891254}
   m_Layer: 5
-  m_Name: TypeToggle_Btn
+  m_Name: StringButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +738,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 463891252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac151e341474f304a941e134162ac9d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c3624edce83d204cb6cdaf60a8287c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   selectedImage: {fileID: 1860896797}
@@ -938,7 +950,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 140867633}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &682280455
 MonoBehaviour:
@@ -1048,7 +1060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 140867633}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &716475028
 GameObject:
@@ -1359,7 +1371,7 @@ GameObject:
   - component: {fileID: 898393753}
   - component: {fileID: 898393754}
   m_Layer: 5
-  m_Name: ColorToggleGroup
+  m_Name: ColorSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1420,10 +1432,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 898393751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9028afbcf3a83044b0986e51dc08b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 39ef2c086793ec2469dba163fb4aeded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,11 +1513,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.925}
+  m_LocalPosition: {x: 0, y: 0, z: -8.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 140867633}
-  m_RootOrder: 0
+  m_Father: {fileID: 28519337}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1585,7 +1596,7 @@ GameObject:
   - component: {fileID: 1183901680}
   - component: {fileID: 1183901682}
   m_Layer: 5
-  m_Name: TypeTogleGroup
+  m_Name: StringSlector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,7 +1679,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183901677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b3b794834cf7704c945288f48e7a89b, type: 3}
+  m_Script: {fileID: 11500000, guid: eceb2e88dce4eda419f03d4bc5094ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1193917076
@@ -2020,7 +2031,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -25, y: 0}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 50, y: 35}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1483307628
 MonoBehaviour:
@@ -2069,10 +2080,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.05
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2176,7 +2187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.1
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2203,14 +2214,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.05
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2340,7 +2351,7 @@ GameObject:
   - component: {fileID: 1664639066}
   - component: {fileID: 1664639065}
   m_Layer: 5
-  m_Name: BallType_Panel
+  m_Name: BallTypePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2408,9 +2419,8 @@ GameObject:
   - component: {fileID: 1679189432}
   - component: {fileID: 1679189431}
   - component: {fileID: 1679189430}
-  - component: {fileID: 1679189433}
   m_Layer: 5
-  m_Name: ControlMenu
+  m_Name: ControlMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2497,22 +2507,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1679189433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679189428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1788d7038226da4aa46bbd0aca709ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typeSelector: {fileID: 0}
-  colorSelector: {fileID: 0}
-  radiusSelector: {fileID: 0}
-  ballTypes: []
 --- !u!1 &1697611075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,12 +2775,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743689935}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 140867633}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757904661
 GameObject:

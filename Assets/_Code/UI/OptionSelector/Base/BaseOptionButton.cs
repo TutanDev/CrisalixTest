@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace TutanDev.UI
 {
-    public class ToggleButton : MonoBehaviour, IPointerClickHandler
+    public abstract class BaseOptionButton<TRef> : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField]Image selectedImage;
 
@@ -28,5 +28,7 @@ namespace TutanDev.UI
         {
             selectedImage.enabled = selected;
         }
+
+        public abstract TRef GetReference();
     }
 }

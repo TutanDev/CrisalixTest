@@ -22,6 +22,12 @@ namespace TutanDev.Core
             size.OnValueChanged += UpdateBallSize;
             color.OnValueChanged += UpdateColor;
         }
+
+        private void OnDisable()
+        {
+            size.OnValueChanged -= UpdateBallSize;
+            color.OnValueChanged -= UpdateColor;
+        }
         void UpdateBallSize(float size)
         {
             block.SetFloat("Radius", size);

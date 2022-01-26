@@ -1,6 +1,7 @@
+using TutanDev.References;
 using UnityEngine;
 
-namespace TutanDev.References
+namespace TutanDev.Core.Types
 {
     [CreateAssetMenu(menuName = "SO References/BallType")]
     public class BallType : ScriptableObject

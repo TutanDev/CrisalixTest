@@ -1,26 +1,26 @@
 using TMPro;
 using TutanDev.References;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TutanDev.UI
 {
     [RequireComponent(typeof(TMP_Text))]
-    public class TMProTextUpdater : MonoBehaviour
+    public class TextUpdater : MonoBehaviour
     {
         TMP_Text label;
         StringReference reference;
 
-        private void Awake()
+        public void Init(string value)
         {
             label = GetComponent<TMP_Text>();
             reference = ScriptableObject.CreateInstance<StringReference>();
             reference.OnValueChanged += UpdateText;
+            reference.Value = value;
         }
 
-        public void Init(string value)
+        public StringReference GetReference()
         {
-            reference.Value = value;
+            return reference;
         }
 
         private void OnDestroy()
