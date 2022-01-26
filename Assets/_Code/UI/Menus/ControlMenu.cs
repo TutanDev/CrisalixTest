@@ -55,7 +55,13 @@ namespace TutanDev.UI
 
         public void ColorSelectorChanged(ColorReference color)
         {
+
             OnColorSelectorChanged(color);
+        }
+
+        public void ApplyBlackView(float radius)
+        {
+            radiusSelector.ApplyBlackView(radius);
         }
 
         void OnFirstTypeSelected(string selectedTypeName)

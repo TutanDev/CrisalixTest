@@ -32,6 +32,12 @@ namespace TutanDev.Core
         void SetBallColor(ColorReference input)
         {
             colorSetter.SetValue(input);
+
+            if (input == config.GetColorByName("Black"))
+            {
+                SetBallRadius(50);
+                controlMenu.ApplyBlackView(5);
+            }
         }
 
         void SetBallRadius(float input)

@@ -29,7 +29,13 @@ namespace TutanDev.Core
             maxLabel.text = max.ToString("#.#");
             slider.minValue = min * 10;
             slider.maxValue = max * 10;
-            //slider.value = min;
+            slider.value = min;
+        }
+
+        public void ApplyBlackView(float radius)
+        {
+            SetRange(5, 5);
+            slider.gameObject.SetActive(false);
         }
     }
 }

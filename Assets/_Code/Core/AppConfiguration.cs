@@ -41,5 +41,10 @@ namespace TutanDev.Core
             return result;
             
         }
+
+        public ColorReference GetColorByName(string name)
+        {
+            return GetAllColors().Find(x => x.name.CompareTo(name) == 0);
+        }
     }
 }
