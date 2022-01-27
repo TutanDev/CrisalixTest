@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using TutanDev.Core;
 using TutanDev.Core.Types;
@@ -56,13 +57,23 @@ namespace TutanDev.UI
 
         public void ColorSelectorChanged(ColorReference newColor)
         {
-            config.GetTypeByName(typeSelector.GetSelectedOption()).selectedColor = newColor;
+            var preset = config.GetPresetByColor(newColor);
+            if (preset != null)
+            {
+                ApplyPresetView(preset);
+            }
+            else
+            {
+                config.GetTypeByName(typeSelector.GetSelectedOption()).selectedColor = newColor;
+            }
             OnColorSelectorChanged(newColor);
         }
 
-        public void ApplyBlackView(float radius)
+        public void ApplyPresetView(BallPreset preset)
         {
-            radiusSelector.ApplyBlackView(radius);
+            typeSelector.DeselectAll();
+            colorSelector.ApplyFilter(new List<ColorReference> { preset.color });
+            radiusSelector.SetFixRadius(preset.radius);
         }
 
         void OnFirstTypeSelected(string selectedTypeName)
@@ -76,13 +87,8 @@ namespace TutanDev.UI
         void OnTypeSelected(string selectedTypeName)
         {
             BallType selectedType = config.GetTypeByName(selectedTypeName);
-
-            // APlicar strategia dibujado standar
             radiusSelector.SetRange(selectedType.minRadius, selectedType.maxRadius, selectedType.selectedRadius);
             colorSelector.ApplyFilter(selectedType.colorPallete.ToList(), selectedType.selectedColor);
-
-            // Aplicar dibujado especial?? --> caso negro?
-
             OnTypeSelectorChanged?.Invoke(selectedTypeName);
         }
     }

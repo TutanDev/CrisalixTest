@@ -33,7 +33,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Radius: 1
+    - Vector1_19647411a9ea4e99a0da0bfa98152fb7: 0.5
     - Vector1_448eb1f7184c484cb26231d33a548be2: 2
+    - Vector1_cd182420a8084de5908e66ef2bd4408a: 0
     m_Colors:
     - BallColor: {r: 0.9019608, g: 0.05490196, b: 0.11372549, a: 1}
   m_BuildTextureStacks: []

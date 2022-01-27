@@ -8,6 +8,7 @@ namespace TutanDev.Core
     public class AppConfiguration : ScriptableObject
     {
         public List<BallType> ballTypes;
+        public List<BallPreset> ballPresets;
         public FloatReference ballRadius;
         public ColorReference ballColor;
 
@@ -44,6 +45,11 @@ namespace TutanDev.Core
         public ColorReference GetColorByName(string name)
         {
             return GetAllColors().Find(x => x.name.CompareTo(name) == 0);
+        }
+
+        public BallPreset GetPresetByColor(ColorReference color)
+        {
+            return ballPresets.Find(x => x.color == color);
         }
     }
 }

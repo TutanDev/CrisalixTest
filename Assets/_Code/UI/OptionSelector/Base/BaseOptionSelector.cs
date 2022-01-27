@@ -46,6 +46,12 @@ namespace TutanDev.UI
             return options[selectedIndex];
         }
 
+        public void DeselectAll()
+        {
+            buttons[selectedIndex].Select(false);
+            selectedIndex = -1;
+        }
+
         void GetButtonPrefab()
         {
             myTransfrom = transform;

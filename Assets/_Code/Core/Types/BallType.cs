@@ -17,7 +17,7 @@ namespace TutanDev.Core.Types
 
         private void OnEnable()
         {
-            selectedRadius = minRadius;
+            selectedRadius = minRadius * 10.0f;
             selectedColor = colorPallete[0];
         }
     }

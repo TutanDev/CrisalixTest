@@ -16,5 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0da14cffc6a2b474cae82f8028213b08, type: 2}
   - {fileID: 11400000, guid: 2aaafc74662daad47baaf1e7b92547e5, type: 2}
   - {fileID: 11400000, guid: 882e70ea0483af64ebe08c68ad648c9b, type: 2}
+  ballPresets:
+  - {fileID: 11400000, guid: c09a555d11d69694fbcfe7470a6dd5e2, type: 2}
   ballRadius: {fileID: 11400000, guid: 00af553b3ed58944f9f89ae0ae2ae08d, type: 2}
   ballColor: {fileID: 11400000, guid: b1916723233e32449a70da4c478882ee, type: 2}

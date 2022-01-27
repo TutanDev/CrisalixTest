@@ -9,6 +9,7 @@ namespace TutanDev.UI
     {
         TMP_Text label;
         StringReference reference;
+        bool isAsset = false;
 
         public void Init(string value)
         {
@@ -25,7 +26,7 @@ namespace TutanDev.UI
 
         private void OnDestroy()
         {
-            if (reference)
+            if (reference && !isAsset)
             {
                 Destroy(reference);
             }

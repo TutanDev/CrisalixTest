@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67589a0d3e0b14947ad568149896a77a, type: 3}
+  m_Name: BlackPreset
+  m_EditorClassIdentifier: 
+  radius: 5
+  color: {fileID: 11400000, guid: e118bb6ca25f8c44e97e3f6a5ef2ab8c, type: 2}
