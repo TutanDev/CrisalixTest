@@ -7,6 +7,7 @@ namespace TutanDev.Core
     {
         [SerializeField] AppConfiguration config;
         [SerializeField] ControlMenu controlMenu;
+        [SerializeField] Renderer StressBall;
 
         ColorSetter colorSetter;
         FloatSetter radiusSetter;
@@ -14,10 +15,13 @@ namespace TutanDev.Core
 
         private void OnEnable()
         {
+            StressBall.enabled = false;
+
             colorSetter = new ColorSetter(config.ballColor);
             radiusSetter = new FloatSetter(config.ballRadius);
 
             controlMenu.Init(config);
+            controlMenu.OnTypeSelectorChanged += OnTypeChanged;
             controlMenu.OnRadiusSelectorChanged += SetBallRadius;
             controlMenu.OnColorSelectorChanged += SetBallColor;
         }
@@ -26,6 +30,12 @@ namespace TutanDev.Core
         {
             controlMenu.OnRadiusSelectorChanged -= SetBallRadius;
             controlMenu.OnColorSelectorChanged -= SetBallColor;
+        }
+
+        void OnTypeChanged(string newType)
+        {
+            StressBall.enabled = true;
+            controlMenu.OnTypeSelectorChanged -= OnTypeChanged;
         }
 
         void SetBallColor(ColorReference input)

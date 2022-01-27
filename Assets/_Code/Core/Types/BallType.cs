@@ -11,5 +11,14 @@ namespace TutanDev.Core.Types
         public float maxRadius;
         [Tooltip("Color Options")]
         public ColorReference[] colorPallete;
+
+        [HideInInspector] public float selectedRadius;
+        [HideInInspector] public ColorReference selectedColor;
+
+        private void OnEnable()
+        {
+            selectedRadius = minRadius;
+            selectedColor = colorPallete[0];
+        }
     }
 }

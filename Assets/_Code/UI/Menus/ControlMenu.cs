@@ -8,6 +8,7 @@ namespace TutanDev.UI
 {
     public class ControlMenu : MonoBehaviour
     {
+        public Action<string> OnTypeSelectorChanged;
         public Action<float> OnRadiusSelectorChanged;
         public Action<ColorReference> OnColorSelectorChanged;
 
@@ -49,13 +50,14 @@ namespace TutanDev.UI
         }
         public void RadiusSelectorChanged(float newRadius)
         {
+            config.GetTypeByName(typeSelector.GetSelectedOption()).selectedRadius = newRadius;
             OnRadiusSelectorChanged(newRadius);
         }
 
-        public void ColorSelectorChanged(ColorReference color)
+        public void ColorSelectorChanged(ColorReference newColor)
         {
-
-            OnColorSelectorChanged(color);
+            config.GetTypeByName(typeSelector.GetSelectedOption()).selectedColor = newColor;
+            OnColorSelectorChanged(newColor);
         }
 
         public void ApplyBlackView(float radius)
@@ -74,8 +76,14 @@ namespace TutanDev.UI
         void OnTypeSelected(string selectedTypeName)
         {
             BallType selectedType = config.GetTypeByName(selectedTypeName);
-            radiusSelector.SetRange(selectedType.minRadius, selectedType.maxRadius);
-            colorSelector.ApplyFilter(selectedType.colorPallete.ToList());
+
+            // APlicar strategia dibujado standar
+            radiusSelector.SetRange(selectedType.minRadius, selectedType.maxRadius, selectedType.selectedRadius);
+            colorSelector.ApplyFilter(selectedType.colorPallete.ToList(), selectedType.selectedColor);
+
+            // Aplicar dibujado especial?? --> caso negro?
+
+            OnTypeSelectorChanged?.Invoke(selectedTypeName);
         }
     }
 }

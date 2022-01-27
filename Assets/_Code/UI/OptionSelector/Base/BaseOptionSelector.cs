@@ -9,10 +9,10 @@ namespace TutanDev.UI
         public Action<TRef> OnOptionSelected;
 
         protected List<TButton> buttons;
-        TButton buttonPrefab;
+        protected List<TRef> options;
         int selectedIndex = -1;
 
-        protected List<TRef> options;
+        TButton buttonPrefab;
         Transform myTransfrom;
 
         public virtual void Init(List<TRef> data)
@@ -28,7 +28,22 @@ namespace TutanDev.UI
                 button.gameObject.SetActive(activeList.Contains(button.GetReference()));
             }
 
-            OnButtonSelected(0);
+            OnButtonSelected(GetFirstActiveButton().index);
+        }
+
+        public void ApplyFilter(List<TRef> activeList, TRef selected)
+        {
+            foreach (var button in buttons)
+            {
+                button.gameObject.SetActive(activeList.Contains(button.GetReference()));
+            }
+
+            OnButtonSelected(options.IndexOf(selected));
+        }
+
+        public TRef GetSelectedOption()
+        {
+            return options[selectedIndex];
         }
 
         void GetButtonPrefab()
@@ -65,6 +80,11 @@ namespace TutanDev.UI
             buttons[selectedIndex].Select(true);
 
             OnOptionSelected?.Invoke(options[selectedIndex]);
+        }
+
+        TButton GetFirstActiveButton()
+        {
+            return buttons.Find(x => x.gameObject.activeInHierarchy);
         }
     }
 }

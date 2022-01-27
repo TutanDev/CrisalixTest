@@ -23,18 +23,18 @@ namespace TutanDev.Core
             slider.onValueChanged.RemoveAllListeners();
         }
 
-        public void SetRange(float min, float max)
+        public void SetRange(float min, float max, float selected)
         {
             minLabel.text = min.ToString("#.#");
             maxLabel.text = max.ToString("#.#");
             slider.minValue = min * 10;
             slider.maxValue = max * 10;
-            slider.value = min;
+            slider.value = selected;
         }
 
         public void ApplyBlackView(float radius)
         {
-            SetRange(5, 5);
+            SetRange(5, 5, 5);
             slider.gameObject.SetActive(false);
         }
     }
