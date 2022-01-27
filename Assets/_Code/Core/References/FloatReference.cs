@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TutanDev.References
+namespace TutanDev.Core
 {
     [CreateAssetMenu(menuName = "SO References/Float")]
     public class FloatReference : Reference<float>

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace TutanDev.References
+namespace TutanDev.Core
 {
     public abstract class Reference<T> : ScriptableObject
     {

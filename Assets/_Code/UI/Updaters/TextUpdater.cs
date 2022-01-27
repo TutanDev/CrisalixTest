@@ -1,5 +1,5 @@
 using TMPro;
-using TutanDev.References;
+using TutanDev.Core;
 using UnityEngine;
 
 namespace TutanDev.UI
@@ -31,9 +31,9 @@ namespace TutanDev.UI
             }
         }
 
-        void UpdateText(string a)
+        void UpdateText(string text)
         {
-            label.text = a.ToString();
+            label.text = text.ToString();
         }
     }
 }

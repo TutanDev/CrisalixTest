@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace TutanDev.References
+namespace TutanDev.Core
 {
     [CreateAssetMenu(menuName = "SO References/String")]
     public class StringReference : Reference<string>

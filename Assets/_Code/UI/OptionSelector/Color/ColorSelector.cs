@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using TutanDev.References;
-using UnityEngine;
+using TutanDev.Core;
 
 namespace TutanDev.UI
 {

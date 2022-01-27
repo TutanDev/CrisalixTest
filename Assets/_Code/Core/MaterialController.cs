@@ -5,8 +5,8 @@ namespace TutanDev.Core
     [RequireComponent(typeof(Renderer))]
     public class MaterialController : MonoBehaviour
     {
-        [SerializeField] References.FloatReference size;
-        [SerializeField] References.ColorReference color;
+        [SerializeField] FloatReference size;
+        [SerializeField] ColorReference color;
         Renderer myRrenderer;
         MaterialPropertyBlock block;
 
